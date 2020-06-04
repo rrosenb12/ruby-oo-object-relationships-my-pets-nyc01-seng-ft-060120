@@ -25,12 +25,17 @@ class Owner
   def self.reset_all
     @@all.clear
   end
+
   def cats
-    Cat.all.select{|cat| cat.owner == self}
+    Cat.all.select do |cat| 
+      cat.owner == self
+    end
   end
 
   def dogs
-    Dog.all.select{|dog| dog.owner == self}
+    Dog.all.select do |dog| 
+      dog.owner == self
+    end
   end
 
   def buy_cat(name)
@@ -42,11 +47,15 @@ class Owner
   end
 
   def walk_dogs
-    self.dogs.each { |dog| dog.mood = "happy" }
+    self.dogs.each do |dog| 
+      dog.mood = "happy"
+    end
   end
 
   def feed_cats
-    self.cats.each { |cat| cat.mood = "happy" }
+    self.cats.each do |cat| 
+      cat.mood = "happy" 
+    end
   end
 
   def sell_pets
